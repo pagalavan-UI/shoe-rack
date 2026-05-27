@@ -1,0 +1,245 @@
+Build a modern premium React shoe shopping application called “Shoe Rack” with two separate role-based UI apps:
+
+1. User App (Main Focus)
+2. Admin App
+
+IMPORTANT:
+- UI only
+- No backend
+- No database
+- Use static/mock JSON data
+- Use React + Vite + Tailwind CSS + Framer Motion
+- Modern luxury sneaker brand style UI
+- Fully responsive
+- Smooth animations and transitions
+- Attractive premium shoe images and layouts
+- Dark modern aesthetic with glassmorphism and neon accents
+
+========================================
+USER APP FEATURES
+========================================
+
+Create a stunning e-commerce UI focused mainly on the shopping experience.
+
+Pages:
+
+1. Landing Page
+- Fullscreen hero section
+- Floating premium sneaker image
+- Animated text
+- CTA buttons:
+  - Shop Now
+  - Explore Collection
+- Modern gradient/dark background
+- Smooth scroll animations
+
+2. Navbar
+- Sticky glassmorphism navbar
+- Logo: Shoe Rack
+- Navigation:
+  - Home
+  - Shop
+  - Men
+  - Women
+  - Sneakers
+  - Cart
+  - Wishlist
+  - Profile
+- Mobile responsive hamburger menu
+
+3. Home Sections
+- Trending Sneakers
+- New Arrivals
+- Limited Edition
+- Best Sellers
+- Featured Brands
+- Promo Banner
+- Testimonials
+- Newsletter Subscription
+- Footer
+
+4. Product Listing Page
+- Grid layout
+- Product cards with:
+  - Large shoe image
+  - Brand
+  - Product name
+  - Price
+  - Rating
+  - Wishlist icon
+  - Add to cart button
+- Hover animations:
+  - Scale effect
+  - Shadow glow
+  - Image zoom
+  - Quick preview overlay
+
+5. Product Details Page
+- Large product image gallery
+- Thumbnail selector
+- Product information
+- Price
+- Ratings
+- Size selector
+- Color selector
+- Add to cart button
+- Buy now button
+- Product description
+- Related products carousel
+
+6. Cart Page
+- Modern cart UI
+- Quantity controls
+- Remove product
+- Animated totals section
+- Checkout button
+
+7. Checkout Page
+(UI only)
+- Address form
+- Payment method cards
+- Order summary
+- Success popup animation
+
+8. Wishlist Page
+- Saved products
+- Move to cart button
+
+9. Profile UI
+- User profile card
+- Order history UI
+- Saved addresses
+
+========================================
+ADMIN APP FEATURES
+========================================
+
+Create a separate admin dashboard UI.
+
+Pages:
+
+1. Admin Dashboard
+- Sidebar navigation
+- Dashboard analytics cards:
+  - Total Products
+  - Orders
+  - Revenue
+  - Users
+- Charts and graphs UI
+- Recent orders table
+
+2. Add Product Page
+Form fields:
+- Product Name
+- Brand
+- Price
+- Category
+- Sizes
+- Stock
+- Image URL
+- Description
+
+Show live product preview while typing.
+
+3. Product Management Page
+- Product table
+- Search bar
+- Filter dropdown
+- Edit/Delete buttons
+- Status badges
+
+4. Orders Page
+- Orders table
+- Delivery status badges
+- Customer details
+
+========================================
+DESIGN STYLE
+========================================
+
+Design inspiration:
+- Nike
+- Adidas
+- Jordan
+- Puma
+- StockX
+
+UI Style:
+- Premium
+- Luxury
+- Minimal
+- Smooth
+- Interactive
+- Modern streetwear aesthetic
+
+Use:
+- Large typography
+- Glassmorphism cards
+- Soft shadows
+- Rounded corners
+- Neon accents
+- Smooth hover effects
+- Page transitions
+
+========================================
+COLOR THEME
+========================================
+
+Primary: #111111
+Accent Red: #FF4D4D
+Gold Accent: #D4AF37
+Background: #F5F5F5
+Dark Sections: #0D0D0D
+
+========================================
+ANIMATIONS
+========================================
+
+Use Framer Motion for:
+- Page transitions
+- Floating shoe animations
+- Hover effects
+- Cart interactions
+- Fade-in sections
+- Smooth card animations
+
+========================================
+EXTRA FEATURES
+========================================
+
+- Dark mode toggle
+- Responsive mobile UI
+- Search bar
+- Filter sidebar
+- Category tabs
+- Animated loaders
+- Toast notifications
+- Skeleton loading cards
+
+========================================
+PROJECT STRUCTURE
+========================================
+
+Create clean scalable folder structure:
+
+/src
+  /components
+  /pages
+  /layouts
+  /data
+  /hooks
+  /assets
+  /animations
+
+========================================
+OUTPUT EXPECTATION
+========================================
+
+Generate:
+- Complete React component structure
+- Tailwind styled UI
+- Modern reusable components
+- Responsive layouts
+- Mock JSON product data
+- Smooth premium UI experience
+- Attractive sneaker image placeholders
