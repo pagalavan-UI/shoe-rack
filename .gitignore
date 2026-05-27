@@ -1,3 +1,4 @@
-node_modules/ 
+npm install @tanstack/react-querynode_modules/ 
 .env.local 
 .env.production 
+node_modules
