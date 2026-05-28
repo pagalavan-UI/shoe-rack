@@ -4,8 +4,6 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
-// Read PORT and BASE_PATH from environment, but provide sensible defaults
-// so the dev server can start even when env files aren't loaded yet.
 const rawPort = process.env.PORT ?? "5173";
 const port = Number(rawPort);
 
@@ -24,34 +22,49 @@ export default defineConfig({
     ...(process.env.NODE_ENV !== "production" &&
       process.env.REPL_ID !== undefined
       ? [
-        await import("@replit/vite-plugin-cartographer").then((m) =>
-          m.cartographer({
-            root: path.resolve(import.meta.dirname, ".."),
-          }),
-        ),
-        await import("@replit/vite-plugin-dev-banner").then((m) =>
-          m.devBanner(),
-        ),
-      ]
+          await import("@replit/vite-plugin-cartographer").then((m) =>
+            m.cartographer({
+              root: path.resolve(import.meta.dirname, ".."),
+            }),
+          ),
+          await import("@replit/vite-plugin-dev-banner").then((m) =>
+            m.devBanner(),
+          ),
+        ]
       : []),
   ],
   resolve: {
-  alias: {
-    "@": path.resolve(import.meta.dirname, "src"),
-    "@assets": path.resolve(import.meta.dirname, "..", "..", "attached_assets"),
-    "@tanstack/react-query": path.resolve(
-      import.meta.dirname,
-      "node_modules",
-      "@tanstack",
-      "react-query"
-    ),
+    alias: {
+      "@": path.resolve(import.meta.dirname, "src"),
+      "@assets": path.resolve(import.meta.dirname, "..", "..", "attached_assets"),
+      "@tanstack/react-query": path.resolve(
+        import.meta.dirname,
+        "node_modules",
+        "@tanstack",
+        "react-query"
+      ),
+    },
+    dedupe: ["react", "react-dom"],
   },
-  dedupe: ["react", "react-dom"],
-},
   root: path.resolve(import.meta.dirname),
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom"],
+          ui: [
+            "@radix-ui/react-tooltip",
+            "@radix-ui/react-label",
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-dropdown-menu",
+            "@radix-ui/react-select",
+          ],
+          query: ["@tanstack/react-query"],
+        },
+      },
+    },
   },
   server: {
     port,
