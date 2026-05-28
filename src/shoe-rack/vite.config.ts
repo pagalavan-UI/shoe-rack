@@ -52,16 +52,19 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ["react", "react-dom"],
-          ui: [
-            "@radix-ui/react-tooltip",
-            "@radix-ui/react-label",
-            "@radix-ui/react-dialog",
-            "@radix-ui/react-dropdown-menu",
-            "@radix-ui/react-select",
-          ],
-          query: ["@tanstack/react-query"],
+        manualChunks(id) {
+          if (id.includes("node_modules/react/") || id.includes("node_modules/react-dom/")) {
+            return "vendor";
+          }
+          if (id.includes("node_modules/@radix-ui/")) {
+            return "ui";
+          }
+          if (id.includes("node_modules/@tanstack/")) {
+            return "query";
+          }
+          if (id.includes("node_modules/")) {
+            return "deps";
+          }
         },
       },
     },
