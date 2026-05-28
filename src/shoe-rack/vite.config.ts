@@ -52,15 +52,30 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       output: {
-        manualChunks(id) {
+     manualChunks(id) {
           if (id.includes("node_modules/react/") || id.includes("node_modules/react-dom/")) {
             return "vendor";
+          }
+          if (id.includes("node_modules/framer-motion/")) {
+            return "framer";
+          }
+          if (id.includes("node_modules/recharts/") || id.includes("node_modules/d3-")) {
+            return "charts";
+          }
+          if (id.includes("node_modules/lucide-react/") || id.includes("node_modules/react-icons/")) {
+            return "icons";
           }
           if (id.includes("node_modules/@radix-ui/")) {
             return "ui";
           }
           if (id.includes("node_modules/@tanstack/")) {
             return "query";
+          }
+          if (id.includes("node_modules/date-fns/") || id.includes("node_modules/react-day-picker/")) {
+            return "dates";
+          }
+          if (id.includes("node_modules/zod/") || id.includes("node_modules/react-hook-form/") || id.includes("node_modules/@hookform/")) {
+            return "forms";
           }
           if (id.includes("node_modules/")) {
             return "deps";
